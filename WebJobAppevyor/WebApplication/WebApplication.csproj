@@ -285,10 +285,15 @@
       CustomCollectFiles;
       $(CopyAllFilesToSingleFolderForPackageDependsOn);
     </CopyAllFilesToSingleFolderForPackageDependsOn>
+
+    <CopyAllFilesToSingleFolderForMsdeployDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForMsdeployDependsOn>
   </PropertyGroup>
   <Target Name="CustomCollectFiles">
     <ItemGroup>
-      <_CustomFiles Include="$(SolutionDir)WebJob\bin\$(ConfigurationName)\**" />
+      <_CustomFiles Include="$(SolutionDir)WebJob\bin\$(ConfigurationName)\**\*" />
       <FilesForPackagingFromProject  Include="%(_CustomFiles.Identity)">
         <DestinationRelativePath>Extra Files\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
