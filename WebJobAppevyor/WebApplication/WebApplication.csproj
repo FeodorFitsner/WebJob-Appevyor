@@ -295,7 +295,7 @@
     <ItemGroup>
       <_CustomFiles Include="$(SolutionDir)WebJob\bin\$(ConfigurationName)\**\*" />
       <FilesForPackagingFromProject  Include="%(_CustomFiles.Identity)">
-        <DestinationRelativePath>Extra Files\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+        <DestinationRelativePath>App_Data\jobs\continuous\MyJob\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
     </ItemGroup>
   </Target>
