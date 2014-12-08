@@ -280,12 +280,19 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
-  <Target Name="BeforeBuild">
+  <PropertyGroup>
+    <CopyAllFilesToSingleFolderForPackageDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForPackageDependsOn>
+  </PropertyGroup>
+  <Target Name="CustomCollectFiles">
     <ItemGroup>
-      <DeployToOffice365Job Include="$(SolutionDir)WebJob\bin\$(ConfigurationName)\**" />
-      <Content Include="App_Data\**\*" />
+      <_CustomFiles Include="$(SolutionDir)WebJob\bin\$(ConfigurationName)\**" />
+      <FilesForPackagingFromProject  Include="%(_CustomFiles.Identity)">
+        <DestinationRelativePath>Extra Files\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
     </ItemGroup>
-    <Copy SourceFiles="@(DeployToOffice365Job)" DestinationFiles="@(DeployToOffice365Job->'App_Data\jobs\continuous\mySuperB\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
   </Target>
 
 </Project>
