@@ -1,5 +1,5 @@
 cache:
-- WebJobAppevyor\packages -> WebJobAppevyor\**\packages.config
+- WebJobAppevyor\packages -> **\packages.config
 
 configuration: Release
 
