@@ -1,7 +1,7 @@
 skip_tags: true
 
-cache:
-- WebJobAppevyor\packages -> **\packages.config
+#cache:
+#- WebJobAppevyor\packages -> **\packages.config
 
 configuration: Release
 
