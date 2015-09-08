@@ -2,6 +2,7 @@ $headers = @{
   "Authorization" = "Bearer $env:gh_token"
   "Content-type" = "application/json"
   "Accept" = "application/vnd.github.v3+json"
+  "User-Agent" = "AppVeyor 3.0"
 }
 
 $body = ConvertTo-Json @{
