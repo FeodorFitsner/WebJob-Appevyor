@@ -12,11 +12,20 @@ build:
 #  - ps: .\create-release.ps1
 
 deploy:
-- provider: GitHub
-  tag: $(appveyor_build_version)
-  release: AccountInBank v$(appveyor_build_version)
-  description: ''
-  auth_token:
-    secure: r9lnQ5IoCZfhxiWzQDjPKpXQthKNMpFzMeRZhCq8eBC3fY8WhZjKwsrdBjEawqRn
+- provider: WebDeploy
+  server: https://ftp-test.scm.azurewebsites.net:443/msdeploy.axd?site=ftp-test
+  website: ftp-test
+  username: $ftp-test
+  password:
+    secure: rXrlAkNm0hNNQeUWN1bHWFKgqi5GLvQo0YJbithkG3/smINhmDF07ePn9I3FAbFeQotlOpT9jMA5b0/HiRAntA==
+  remove_files: true
+
+#deploy:
+#- provider: GitHub
+#  tag: $(appveyor_build_version)
+#  release: AccountInBank v$(appveyor_build_version)
+#  description: ''
+#  auth_token:
+#    secure: r9lnQ5IoCZfhxiWzQDjPKpXQthKNMpFzMeRZhCq8eBC3fY8WhZjKwsrdBjEawqRn
 #    #secure: DZBB/Bpxr0bE4u/bBqPxytAUvgq1T2jghhIdPNudECDs+f5SHaVDnwMks9crVMIY
-  draft: true
+#  draft: true
