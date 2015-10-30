@@ -15,8 +15,7 @@ test: off
 
 deploy:
 - provider: WebDeploy
-  #server: https://ftp-test.scm.azurewebsites.net:443/msdeploy.axd?site=ftp-test
-  server: https://rubrikkssmgr.scm.azurewebsites.net:443/msdeploy.axd?site=ftp-test
+  server: https://ftp-test.scm.azurewebsites.net:443/msdeploy.axd?site=ftp-test
   website: ftp-test
   username: $ftp-test
   password:
