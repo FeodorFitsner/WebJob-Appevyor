@@ -5,6 +5,9 @@ skip_tags: true
 
 configuration: Release
 
+nuget:
+  account_feed: true
+
 build:
   publish_wap: true
 
