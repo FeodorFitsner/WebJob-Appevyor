@@ -1,3 +1,5 @@
+os: Default Azure
+
 skip_tags: true
 
 #cache:
