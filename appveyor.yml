@@ -1,4 +1,4 @@
-os: Default Azure
+#os: Default Azure
 
 skip_tags: true
 
