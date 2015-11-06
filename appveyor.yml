@@ -1,4 +1,4 @@
-#os: Default Azure
+os: test
 
 skip_tags: true
 
@@ -18,14 +18,18 @@ test: off
 #deploy_script:
 #  - ps: .\create-release.ps1
 
+#deploy:
+#- provider: WebDeploy
+#  server: https://ftp-test.scm.azurewebsites.net:443/msdeploy.axd?site=ftp-test
+#  website: ftp-test
+#  username: $ftp-test
+#  password:
+#    secure: rXrlAkNm0hNNQeUWN1bHWFKgqi5GLvQo0YJbithkG3/smINhmDF07ePn9I3FAbFeQotlOpT9jMA5b0/HiRAntA==
+#  remove_files: true
+
 deploy:
-- provider: WebDeploy
-  server: https://ftp-test.scm.azurewebsites.net:443/msdeploy.axd?site=ftp-test
-  website: ftp-test
-  username: $ftp-test
-  password:
-    secure: rXrlAkNm0hNNQeUWN1bHWFKgqi5GLvQo0YJbithkG3/smINhmDF07ePn9I3FAbFeQotlOpT9jMA5b0/HiRAntA==
-  remove_files: true
+- provider: Environment
+  name: Web Deploy (WAWS)
 
 #deploy:
 #- provider: GitHub
