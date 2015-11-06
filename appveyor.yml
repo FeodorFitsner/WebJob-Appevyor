@@ -1,4 +1,4 @@
-os: test
+#os: test
 
 skip_tags: true
 
@@ -27,9 +27,9 @@ test: off
 #    secure: rXrlAkNm0hNNQeUWN1bHWFKgqi5GLvQo0YJbithkG3/smINhmDF07ePn9I3FAbFeQotlOpT9jMA5b0/HiRAntA==
 #  remove_files: true
 
-deploy:
-- provider: Environment
-  name: Web Deploy (WAWS)
+#deploy:
+#- provider: Environment
+#  name: Web Deploy (WAWS)
   #website_name:
   #  secure: zgwgweFUJ3AReU2I715w0w==
 
