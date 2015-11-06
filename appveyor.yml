@@ -30,6 +30,7 @@ test: off
 deploy:
 - provider: Environment
   name: Web Deploy (WAWS)
+  website_name: aaabbb
 
 #deploy:
 #- provider: GitHub
