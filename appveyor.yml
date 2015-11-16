@@ -1,3 +1,5 @@
+os: test
+
 skip_tags: true
 
 cache:
