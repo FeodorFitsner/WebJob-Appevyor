@@ -1,12 +1,12 @@
-os: Visual Studio 2013
+#os: Visual Studio 2013
 
 skip_tags: true
 
 init:
 - ps: Set-ItemProperty -Path 'HKLM:\SOFTWARE\AppVeyor\Build Agent' -Name "StorageType" -Value "GoogleStorage"
 
-cache:
-- WebJobAppevyor\packages -> **\packages.config
+#cache:
+#- WebJobAppevyor\packages -> **\packages.config
 
 configuration: Release
 
